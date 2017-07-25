@@ -1,0 +1,56 @@
+ASSIGNMENT 1 
+
+import javax.swing.JOptionPane;
+
+public class HelloWorld {
+	public static void main(String[] args) {
+		System.out.println("Hello World!");
+		System.out.println("Enjoy Programming Java");
+		System.out.println("My name is Puneet Birdi.");
+		System.out.println("My student number is 500634149");
+		System.out.println("I am a full time student.");
+		System.out.println("I am thinking of specializing in Systems Analysis and Design or Database Design");
+		System.out.println("I have programmed in a little bit of Python and SQL");
+		
+	javax.swing.JOptionPane.showMessageDialog(null, "Hello World!");
+	javax.swing.JOptionPane.showMessageDialog(null,"Bye World!", "Fancy Title",JOptionPane.INFORMATION_MESSAGE);
+	}
+}
+
+
+________________________________________________________________________________________
+
+ASSIGNMENT 2
+
+
+
+import javax.swing.JOptionPane;
+
+public class Interest {
+	public static void main(String[] args) {
+	
+	/* Declare the variables. */
+	
+	double principal;
+	double rate;
+	double interest;
+	
+	/*Do the computations */
+	principal = 17000;
+	rate = 0.07;
+	interest = principal * rate;  //Compute the interest.
+	
+	principal = principal + interest;
+		// Computer value of investment after one year with interest.
+		// (Note: The new value replaces the old value of principal.
+	
+	/* Output the results. */
+	
+	System.out.print("The interest earned is $");
+	System.out.println(interest);
+	System.out.print("The value of the investment after one year is $");
+	System.out.println(principal);
+	
+	}
+			
+}

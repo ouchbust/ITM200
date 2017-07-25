@@ -1,0 +1,143 @@
+QUESTION 1 
+
+import javax.swing.JOptionPane;
+public class CH4Q1 {
+
+	public static void main(String[] args) {
+	
+		String strName = JOptionPane.showInputDialog("Please enter a name or leave blank when done.");
+				int pos = strName.indexOf(" ");
+				System.out.println("Index location of space: " + pos);
+				String firstName = strName.substring(0, pos);
+				String lastName = strName.substring(pos+1);
+				firstName = firstName.substring(0,1).toUpperCase() + firstName.substring(1).toLowerCase();
+				lastName = lastName.substring(0,1).toUpperCase() + lastName.substring(1).toLowerCase();
+				System.out.println("My name is " + lastName + ", " + firstName + " " + lastName + ". ");
+	}
+
+}
+
+_________________________________________
+CONSOLE OUTPUT:
+
+Index location of space: 5
+My name is Bond, James Bond.
+_________________________________________
+_________________________________________
+QUESTION 2
+
+import javax.swing.JOptionPane;
+public class CH4Q2 {
+
+	public static void main(String[] args) {
+	String strName = JOptionPane.showInputDialog("Please enter a name or leave blank when done.");
+	int pos = strName.indexOf(" ");
+	int pos2 = strName.indexOf(" ", pos + 1);
+	
+	System.out.println(pos);
+	System.out.println(pos2);
+	
+	String firstName = strName.substring(0, pos);
+	String middleName = strName.substring(pos + 1, pos2);
+	String lastName= strName.substring(pos2+1);
+	
+	firstName = firstName.substring(0,1).toUpperCase() +
+	firstName.substring(1).toLowerCase();
+	lastName = lastName.substring(0,1).toUpperCase() + lastName.substring(1).toLowerCase();
+	middleName = middleName.substring(0,1).toUpperCase();
+	
+	System.out.println("My name is " + lastName + ", " + firstName + " " + middleName + ".");
+	
+	}
+
+}
+
+_________________________________________
+CONSOLE OUTPUT
+
+5
+14
+My name is Kirk, James T.
+_________________________________________
+_________________________________________
+QUESTION 3
+
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import javax.swing.JOptionPane;
+public class CH4Q3 {
+
+	public static void main(String[] args) {
+	//Header & Variable
+	System.out.printf("%-15s      %15s      %15s    %15s\n", "Name","Amount","HST","Total");
+	
+	final double HST = .13;
+	String strAmount;
+	double amount;
+	double amountHST;
+	double total;
+	NumberFormat formatter = new DecimalFormat("$###,###,###,##0.00");
+	String strName;
+	String strAmt;
+	String strHST;
+	String strTot;
+	
+//BODY 1 ***************************
+	
+	strName = JOptionPane.showInputDialog("Input a name");
+	strAmount = JOptionPane.showInputDialog("Input a dollar amount");
+	amount = Double.parseDouble(strAmount);
+	amountHST = amount * HST;
+	total = amount + amountHST;
+	
+	strAmt = formatter.format(amount);
+	strHST = formatter.format(amountHST);
+	strTot = formatter.format(total);
+	
+	System.out.printf("%-15s     %,15.2f    %,15.2f     %,15.2f\n", strName,amount,amountHST,total);
+	
+	strName = (strName + "               ").substring(0, 15);
+	strAmt="***************" + strAmt;
+	strAmt = strAmt.substring(strAmt.length() - 15);
+	strHST="***************" + strHST;
+	strHST = strAmt.substring(strHST.length() - 15);
+		strTot = "***************" + strTot;
+		strTot = strTot.substring(strTot.length() - 15);
+    System.out.println(strName + "     " + strAmt + "          " + strHST + "     " + strTot);
+	
+  //BODY 2 ***************************
+	
+  	strName = JOptionPane.showInputDialog("Input a name");
+  	strAmount = JOptionPane.showInputDialog("Input a dollar amount");
+  	amount = Double.parseDouble(strAmount);
+  	amountHST = amount * HST;
+  	total = amount + amountHST;
+  	
+  	strAmt = formatter.format(amount);
+  	strHST = formatter.format(amountHST);
+  	strTot = formatter.format(total);
+  	
+  	System.out.printf("%-15s     %,15.2f    %,15.2f     %,15.2f\n", strName,amount,amountHST,total);
+  	
+  	strName = (strName + "               ").substring(0, 15);
+  	strAmt="***************" + strAmt;
+  	strAmt = strAmt.substring(strAmt.length() - 15);
+  	strHST="***************" + strHST;
+  	strHST = strAmt.substring(strHST.length() - 15);
+  		strTot = "***************" + strTot;
+  		strTot = strTot.substring(strTot.length() - 15);
+      System.out.println(strName + "          " + strAmt + "          " + strHST + "          " + strTot);
+      
+	}
+
+}
+
+_________________________________________
+CONSOLE OUTPUT
+
+Puneet                       500.00              65.00              565.00
+Puneet              ********$500.00          **$500.00     ********$565.00
+Pete                       5,000.00             650.00            5,650.00
+Pete                ******$5,000.00           5,000.00     ******$5,650.00
+
+
